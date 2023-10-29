@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Application Form</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+    <header>
+        <h1 class="text-center mb-5">Job Application Form🕵🏼</h1>
+    </header>
+
+    <form id="jobApplicationForm">
+
+        <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" class="form-control" pattern="[A-Za-z\s]{5,50}" placeholder="John Doe" required>
+            <div class="error-message"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" class="form-control" pattern="[A-Za-z0-9\s,.-]{10,100}" placeholder="Poshtova street 3" required>
+            <div class="error-message"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="contactNumber">Contact Number</label>
+            <input type="text" id="contactNumber" name="contactNumber" class="form-control" pattern="\d{10}" placeholder="0955577277" required>
+            <small class="form-text text-muted">Should have 10 numbers.</small>
+            <div class="error-message"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="skillLevel">Skill Level in Programming (1-10)</label>
+            <input type="range" id="skillLevel" name="skillLevel" class="form-control-range" min="1" max="10" required>
+            <small class="form-text text-muted">Select a range value.</small>
+            <div class="error-message"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" class="form-control" value="2000-01-01" required>
+            <small class="form-text text-muted">Enter your date of birth. Minimum age for job application is 18.</small>
+            <div class="error-message"></div>
+        </div>
+
+        <div class="form-group">
+            <label>Position Applied For</label>
+            <div>
+                <input type="radio" id="junior" name="position" value="Junior Developer" required>
+                <label for="junior">Junior Developer</label>
+            </div>
+            <div>
+                <input type="radio" id="senior" name="position" value="Senior Developer">
+                <label for="senior">Senior Developer</label>
+            </div>
+            <div class="error-message"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="janedoe@gmail.com" required>
+            <small class="form-text text-muted">Enter a valid email address.</small>
+            <div class="error-message"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Create Password</label>
+            <input type="password" id="password" name="password" class="form-control" pattern="(?=.*\d)(?=.*[@$!%*?&])(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+            <small class="form-text text-muted">Password should include uppercase, lowercase, numbers, and be at least 8 characters long.</small>
+            <div class="error-message"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" name="confirm-password" class="form-control" placeholder="Password123!" required>
+            <div class="error-message"></div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <div id="output"></div>
+</div>
+
+<script src="scripts/script.js"></script>
+
+</body>
+</html>
